@@ -1,14 +1,16 @@
 package org.example;
 
+import java.util.concurrent.atomic.AtomicReference;
+
 public class ChangeBase {
 
     public void TenToTwo(int number){
-         StringBuilder stringBuilder = new StringBuilder();
+        AtomicReference<StringBuilder> stringBuilder = new AtomicReference<>();
         int result ;
         while(number >=  1){
             result = number % 2;
             number = number / 2;
-            stringBuilder.append(result);
+            stringBuilder.get().append(result);
 
         }
     }
